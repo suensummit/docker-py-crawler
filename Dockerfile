@@ -2,6 +2,8 @@ FROM c3h3/pyenv
 
 MAINTAINER Summit Suen <summit.suen@gmail.com>
 
+RUN pyenv install --list && pyenv update
+
 RUN /root/.pyenv/bin/pyenv install anaconda-2.3.0
 
 RUN /root/.pyenv/bin/pyenv global anaconda-2.3.0
