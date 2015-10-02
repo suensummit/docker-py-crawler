@@ -2,15 +2,11 @@ FROM c3h3/pyenv
 
 MAINTAINER Summit Suen <summit.suen@gmail.com>
 
-ENV DEBIAN_FRONTEND noninteractive
+RUN pyenv install anaconda-2.3.0
 
-ENV HOME /root
-ENV PYENVPATH $HOME/.pyenv
-ENV PATH $PYENVPATH/shims:$PYENVPATH/bin:$PATH
+RUN pyenv global anaconda-2.3.0
 
-RUN pyenv install anaconda-2.3.0 && \
-    pyenv global anaconda-2.3.0 && \
-    conda update anaconda
+RUN conda update anaconda
 
 COPY requirements.txt /tmp/
 
