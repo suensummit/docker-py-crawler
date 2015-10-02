@@ -14,6 +14,8 @@ RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/py
 
 RUN echo 'eval "$(pyenv init -)"' >  /root/.bashrc
 
+RUN source /root/.bashrc
+
 RUN pyenv install anaconda-2.3.0 && \
     pyenv global anaconda-2.3.0 && \
     conda update anaconda
