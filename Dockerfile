@@ -32,4 +32,7 @@ RUN (echo "c = get_config()" && \
 
 EXPOSE 8888
 
+RUN git clone https://github.com/datasci-info/PyCrawler101-201510.git && \
+    cd PyCrawler101-201510
+
 CMD ipython notebook --ip=0.0.0.0 --port 8888 --profile=$IPYNB_PROFILE
