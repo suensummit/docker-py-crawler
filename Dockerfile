@@ -14,12 +14,12 @@ RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/py
 
 RUN echo 'eval "$(pyenv init -)"' >  /root/.bashrc
 
-ADD requirement.txt /root/requirement.txt
+ADD requirement.txt requirement.txt
 
 RUN pyenv install anaconda-2.3.0 && \
     pyenv global anaconda-2.3.0 && \
     conda update anaconda && \
-    pip install -r /root/requirement.txt
+    pip install -r requirement.txt
 
 RUN ipython profile create
 
